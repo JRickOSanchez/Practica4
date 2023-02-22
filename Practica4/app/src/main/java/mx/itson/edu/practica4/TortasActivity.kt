@@ -11,30 +11,28 @@ import android.widget.ImageView
 import android.widget.ListView
 import android.widget.TextView
 
-class ProductosActivity : AppCompatActivity() {
+class TortasActivity : AppCompatActivity() {
 
     var menu: ArrayList<Product> = ArrayList<Product>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_productos)
+        setContentView(R.layout.activity_tortas)
 
         agregarProductos()
 
-        var listview: ListView = findViewById(R.id.listview) as ListView
+        var listview: ListView = findViewById(R.id.listview_tortas) as ListView
 
         var adaptador: AdaptadorProductos = AdaptadorProductos(this, menu)
         listview.adapter = adaptador
-
     }
 
     fun agregarProductos() {
-        menu.add(Product("Quesadillas", R.drawable.quesadillas, "Rellenas con su carne favorita, servidas con ensalada. Filled with your choice of meat, served with salad.", 5.69))
-        menu.add(Product("Huaraches", R.drawable.huaraches, "Tortilla gruesa con frijoles, tu carne favorita, lechuga, queso fresco y crema. Big Thick tortilla with beans, your choice of meat, fresh cheese, and sour cream.", 10.85))
-        menu.add(Product("Gringas", R.drawable.gringas, "Tortilla de harina con queso, carne al pastor y piña Flour tortilla with cheese marinated pork and pineapple", 7.99))
-        menu.add(Product("Sincronizadas", R.drawable.sincronizadas, "Tortilla de harina rellena con queso y jamon. Se sirve con lechuga, crema y guacamole Sandwich of Two four tortillas filled with ham and cheese. Served with lettuce, sour cream, and guacamole.", 7.69))
-        menu.add(Product("Sopes", R.drawable.sopes, "Tortilla gruesa cubierta de frijoles, tu carne favorita, lechuga, queso fresco y crema Fried thick tortilla with beans, your choice of meat, lettuce, fresh cheese, sour cream and tomatoes.", 3.56))
-        menu.add(Product("Tostadas", R.drawable.tostadas, "Tortilla frita con frijoles, tu carne favorita, lechuga, queso fresco, crema y jitomate Fried tortilla with beans, your choice of meat, lettuce, fresh cheese, sour cream and tomatoes.", 3.73))
+        menu.add(Product("Torta Regular", R.drawable.torta, "All tortas come with lettuce, onions, tomatoes, avocado, sour cream, jalapeno pepper and your choice of meat.", 11.99))
+        menu.add(Product("Torta -Milanesa de Res o Pollo", R.drawable.tortamilanesa, "Breaded Steak or Chicken.", 12.99))
+        menu.add(Product("Torta Cubana", R.drawable.tortacubana, "Chorizo, asada, jamon, pastor y queso Mexican sausage, steak, marinated pork, ham, and cheese.", 13.59))
+        menu.add(Product("Torta Mixta", R.drawable.tortamixta, "Chorizo, asada y pastor./ Mexican sausage, steak and marinated pork.", 12.99))
+        menu.add(Product("Small Mexican Torta", R.drawable.smallmexican, "Bolillo bread sandwich with your of meat, shredded lettuce, avocado, tomato, onion and sour cream.", 7.39))
     }
 
     private class AdaptadorProductos: BaseAdapter {
@@ -75,4 +73,5 @@ class ProductosActivity : AppCompatActivity() {
             return vista
         }
     }
+
 }

@@ -11,17 +11,17 @@ import android.widget.ImageView
 import android.widget.ListView
 import android.widget.TextView
 
-class ProductosActivity : AppCompatActivity() {
+class EspecialidadesActivity : AppCompatActivity() {
 
     var menu: ArrayList<Product> = ArrayList<Product>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_productos)
+        setContentView(R.layout.activity_especialidades)
 
         agregarProductos()
 
-        var listview: ListView = findViewById(R.id.listview) as ListView
+        var listview: ListView = findViewById(R.id.listview_especialidades) as ListView
 
         var adaptador: AdaptadorProductos = AdaptadorProductos(this, menu)
         listview.adapter = adaptador
@@ -29,12 +29,12 @@ class ProductosActivity : AppCompatActivity() {
     }
 
     fun agregarProductos() {
-        menu.add(Product("Quesadillas", R.drawable.quesadillas, "Rellenas con su carne favorita, servidas con ensalada. Filled with your choice of meat, served with salad.", 5.69))
-        menu.add(Product("Huaraches", R.drawable.huaraches, "Tortilla gruesa con frijoles, tu carne favorita, lechuga, queso fresco y crema. Big Thick tortilla with beans, your choice of meat, fresh cheese, and sour cream.", 10.85))
-        menu.add(Product("Gringas", R.drawable.gringas, "Tortilla de harina con queso, carne al pastor y piña Flour tortilla with cheese marinated pork and pineapple", 7.99))
-        menu.add(Product("Sincronizadas", R.drawable.sincronizadas, "Tortilla de harina rellena con queso y jamon. Se sirve con lechuga, crema y guacamole Sandwich of Two four tortillas filled with ham and cheese. Served with lettuce, sour cream, and guacamole.", 7.69))
-        menu.add(Product("Sopes", R.drawable.sopes, "Tortilla gruesa cubierta de frijoles, tu carne favorita, lechuga, queso fresco y crema Fried thick tortilla with beans, your choice of meat, lettuce, fresh cheese, sour cream and tomatoes.", 3.56))
-        menu.add(Product("Tostadas", R.drawable.tostadas, "Tortilla frita con frijoles, tu carne favorita, lechuga, queso fresco, crema y jitomate Fried tortilla with beans, your choice of meat, lettuce, fresh cheese, sour cream and tomatoes.", 3.73))
+        menu.add(Product("Mojarra Frita - Fried Fish", R.drawable.mojarra, "Tilapia frita servida con lechiga, cebolla, jitomate, aguacate y tortillas. Agregue arroz y frijoles por $1.50 adicinales Fried tilapia served with lettuce, onions, tomatoes, avocado and tortillas. Add rice and beans for $1.50 extra.", 15.99))
+        menu.add(Product("Ceviche", R.drawable.ceviche, "Tilapia, camarones, Aguacate y pico de gallo servido con Chips / Tilapia, Shrimp, Avocado and pico de gallo, served with Chips.", 6.99))
+        menu.add(Product("Fajita Burrito", R.drawable.burritos, "Gran burrito relleno de tu carne favorita, cebolla, chile, arroz, frijoles y jitomate. Servido con lechuga y guacamole Large burrito filled with your choice of meat, onions, chile, peppers, rice, beans and tomatoes. Served with lettuce guacamole and sour cream.", 12.99))
+        menu.add(Product("Fajita Quesadilla", R.drawable.fajitaquesadilla, "Quesadilla extra grande, rellena con tu carne favorita, cebolla asada, chile banana y jitomate. Servida con arroz, frijoles y ensalada Extra large quesadilla with your choice of meat, cooked with grilled onions, banana peppers and tomatoes. Served with rice beans and salad.", 13.99))
+        menu.add(Product("Botana de Camarones", R.drawable.botanacamarones, "", 17.99))
+        menu.add(Product("Coctel camaron", R.drawable.coctel, "", 14.50))
     }
 
     private class AdaptadorProductos: BaseAdapter {

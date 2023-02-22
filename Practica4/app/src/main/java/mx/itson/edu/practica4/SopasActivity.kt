@@ -11,30 +11,29 @@ import android.widget.ImageView
 import android.widget.ListView
 import android.widget.TextView
 
-class ProductosActivity : AppCompatActivity() {
+class SopasActivity : AppCompatActivity() {
 
     var menu: ArrayList<Product> = ArrayList<Product>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_productos)
+        setContentView(R.layout.activity_sopas)
 
         agregarProductos()
 
-        var listview: ListView = findViewById(R.id.listview) as ListView
+        var listview: ListView = findViewById(R.id.listview_sopas) as ListView
 
         var adaptador: AdaptadorProductos = AdaptadorProductos(this, menu)
         listview.adapter = adaptador
-
     }
 
     fun agregarProductos() {
-        menu.add(Product("Quesadillas", R.drawable.quesadillas, "Rellenas con su carne favorita, servidas con ensalada. Filled with your choice of meat, served with salad.", 5.69))
-        menu.add(Product("Huaraches", R.drawable.huaraches, "Tortilla gruesa con frijoles, tu carne favorita, lechuga, queso fresco y crema. Big Thick tortilla with beans, your choice of meat, fresh cheese, and sour cream.", 10.85))
-        menu.add(Product("Gringas", R.drawable.gringas, "Tortilla de harina con queso, carne al pastor y piña Flour tortilla with cheese marinated pork and pineapple", 7.99))
-        menu.add(Product("Sincronizadas", R.drawable.sincronizadas, "Tortilla de harina rellena con queso y jamon. Se sirve con lechuga, crema y guacamole Sandwich of Two four tortillas filled with ham and cheese. Served with lettuce, sour cream, and guacamole.", 7.69))
-        menu.add(Product("Sopes", R.drawable.sopes, "Tortilla gruesa cubierta de frijoles, tu carne favorita, lechuga, queso fresco y crema Fried thick tortilla with beans, your choice of meat, lettuce, fresh cheese, sour cream and tomatoes.", 3.56))
-        menu.add(Product("Tostadas", R.drawable.tostadas, "Tortilla frita con frijoles, tu carne favorita, lechuga, queso fresco, crema y jitomate Fried tortilla with beans, your choice of meat, lettuce, fresh cheese, sour cream and tomatoes.", 3.73))
+        menu.add(Product("Pozole", R.drawable.pozole, "Weekends only.", 5.99))
+        menu.add(Product("Menudo", R.drawable.menudo, "Wednesday to Sunday.", 5.99))
+        menu.add(Product("Caldo de Res", R.drawable.caldores, "", 5.99))
+        menu.add(Product("Caldo de Camaron", R.drawable.caldocamaron, "Shrimp soup.", 12.99))
+        menu.add(Product("Sopa de Mariscos", R.drawable.sopamariscos, "Seafood soup.", 19.99))
+        menu.add(Product("Coctel de Camaron", R.drawable.coctel, "Shrimp cocktail.", 14.99))
     }
 
     private class AdaptadorProductos: BaseAdapter {
