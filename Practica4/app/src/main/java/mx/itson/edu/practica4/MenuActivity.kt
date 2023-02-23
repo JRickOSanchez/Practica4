@@ -53,31 +53,5 @@ class MenuActivity : AppCompatActivity() {
             intent.putExtra("menuType", "Drinks")
             startActivity(intent)
         }
-
-        btnEspecialidades.setOnClickListener {
-            var intent: Intent = Intent(this, EspecialidadesActivity::class.java)
-            startActivity(intent)
-        }
-
-        btnCombinations.setOnClickListener {
-            var intent: Intent = Intent(this, CombinationsActivity::class.java)
-            startActivity(intent)
-        }
-
-        btnTortas.setOnClickListener {
-            var intent: Intent = Intent(this, TortasActivity::class.java)
-            startActivity(intent)
-        }
-
-        btnSopas.setOnClickListener {
-            var intent: Intent = Intent(this, SopasActivity::class.java)
-            startActivity(intent)
-        }
-
-        btnDrinks.setOnClickListener {
-            var intent: Intent = Intent(this, DrinksActivity::class.java)
-            startActivity(intent)
-        }
-
     }
 }
