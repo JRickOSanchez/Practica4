@@ -24,7 +24,7 @@ class ProductosActivity : AppCompatActivity() {
         var menuOption: String? = intent.getStringExtra("menuType")
         agregarProductos(menuOption)
 
-        var listview: ListView = findViewById(R.id.listView) as ListView
+        var listview: ListView = findViewById(R.id.listview) as ListView
 
         var adaptador: AdaptadorProductos = AdaptadorProductos(this, menu)
         listview.adapter = adaptador

@@ -5,16 +5,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".ProductosActivity">
+    tools:context=".SopasActivity">
 
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:src="@drawable/antojitos" />
+        android:src="@drawable/sopas" />
 
     <ListView
-        android:id="@+id/listview"
+        android:id="@+id/listview_sopas"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
-    
+
 </LinearLayout>
